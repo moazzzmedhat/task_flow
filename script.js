@@ -1,6 +1,6 @@
-// Intersection Observer for scroll animations
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Create intersection observer for animations
+   
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -14,13 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe all elements with data-aos attribute
     const animatedElements = document.querySelectorAll('[data-aos]');
     animatedElements.forEach(el => {
         observer.observe(el);
     });
 
-    // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -37,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add some interactive elements
+ 
     const ctaButton = document.querySelector('.cta-button');
     if (ctaButton) {
         ctaButton.addEventListener('click', function() {
-            // Scroll to pricing section when CTA button is clicked
+         
             const pricingSection = document.querySelector('#pricing');
             if (pricingSection) {
                 pricingSection.scrollIntoView({
@@ -52,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add hover effects to feature cards
+
     const featureCards = document.querySelectorAll('.feature-card');
     featureCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -64,11 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add click effects to pricing buttons
     const pricingButtons = document.querySelectorAll('.pricing-button');
     pricingButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Add a ripple effect
+       
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
@@ -97,11 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', requestTick);
 
-    // Add loading animation for page elements
+
     window.addEventListener('load', function() {
         document.body.classList.add('loaded');
         
-        // Animate hero elements on page load
+   
         const heroTitle = document.querySelector('.hero-title');
         const heroSubtitle = document.querySelector('.hero-subtitle');
         const heroButton = document.querySelector('.cta-button');
@@ -117,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Add scroll progress indicator
+
     const progressBar = document.createElement('div');
     progressBar.className = 'scroll-progress';
     progressBar.style.cssText = `
@@ -138,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add CSS for ripple effect
 const style = document.createElement('style');
 style.textContent = `
     .pricing-button {
@@ -172,3 +168,4 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
